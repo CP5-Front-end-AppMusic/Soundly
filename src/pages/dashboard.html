@@ -16,7 +16,6 @@
 
 <body class="bg-black text-white flex">
 
-  <!-- SIDEBAR -->
   <aside class="w-64 bg-black p-6 hidden md:flex flex-col justify-between border-r border-gray-800">
 
     <div>
@@ -45,10 +44,8 @@
 
   </aside>
 
-  <!-- MAIN -->
   <main class="flex-1 p-6 pb-24">
 
-    <!-- HEADER -->
     <div class="flex justify-between items-center mb-8">
 
       <input 
@@ -63,7 +60,6 @@
 
     </div>
 
-    <!-- PLAYLISTS- Indicação -->
     <section class="mb-10">
       <h2 class="text-2xl font-bold mb-6">Para você</h2>
 
@@ -87,7 +83,6 @@
 
         </div>
 
-        <!-- CARD 2 -->
         <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
@@ -105,7 +100,6 @@
 
         </div>
 
-        <!-- CARD 3 -->
         <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
@@ -123,7 +117,6 @@
 
         </div>
 
-        <!-- CARD 4 -->
         <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
@@ -144,13 +137,12 @@
       </div>
     </section>
     
-    <!-- PLAYLISTS Ouça novamente -->
+
     <section class="mb-10">
       <h2 class="text-2xl font-bold mb-6">Ouça novamente</h2>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 
-        <!-- CARD -->
         <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
@@ -168,7 +160,7 @@
 
         </div>
 
-        <!-- CARD 2 -->
+    
         <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
@@ -186,7 +178,6 @@
 
         </div>
 
-        <!-- CARD 3 -->
         <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
@@ -204,7 +195,7 @@
 
         </div>
 
-        <!-- CARD 4 -->
+      
         <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
@@ -226,7 +217,6 @@
     </section>
 
 
-    <!-- MÚSICAS -->
     <section>
       <h2 class="text-2xl font-bold mb-4">Tocando agora</h2>
 
@@ -252,7 +242,7 @@
 
   </main>
 
-  <!-- PLAYER FIXO -->
+  
   <div class="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-gray-800 p-4 flex justify-between items-center">
 
     <span id="player" class="text-gray-300">Nenhuma música tocando</span>
@@ -265,7 +255,6 @@
 
   </div>
 
-  <!-- SCRIPT -->
   <script>
     function play(nome) {
       document.getElementById("player").innerText = "🎧 Tocando: " + nome;
