@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soundly Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white flex">
+
+  <!-- SIDEBAR -->
+  <aside class="w-64 bg-black p-6 hidden md:flex flex-col justify-between border-r border-gray-800">
+
+    <div>
+      <h1 class="text-2xl font-bold text-pink-500 mb-8">Soundly</h1>
+
+      <nav class="space-y-4">
+        <a href="#" class="block hover:text-pink-400">🏠 Início</a>
+        <a href="#" class="block hover:text-pink-400">🔍 Buscar</a>
+        <a href="#" class="block hover:text-pink-400">🎵 Biblioteca</a>
+      </nav>
+
+      <div class="mt-10">
+        <p class="text-gray-400 text-sm mb-2">Playlists</p>
+        <ul class="space-y-2 text-sm">
+          <li>🔥 Top Hits</li>
+          <li> Rock</li>
+          <li> Chill</li>
+          <li> Pop</li>
+        </ul>
+      </div>
+    </div>
+
+    <button onclick="logout()" class="text-red-400 text-sm hover:text-red-600">
+      Sair
+    </button>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 p-6 pb-24">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center mb-8">
+
+      <input 
+        type="text" 
+        placeholder="Buscar músicas..."
+        class="bg-gray-800 p-3 rounded-lg w-1/2 focus:outline-none focus:ring-2 focus:ring-pink-500"
+      >
+
+      <div class="flex items-center gap-3">
+        <span class="text-gray-300">👤 usuário</span>
+      </div>
+
+    </div>
+
+    <!-- PLAYLISTS- Indicação -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-6">Para você</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <!-- CARD -->
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+
+          <div class="relative">
+            <img src="../assets/MaisTocada.png"
+              class="h-40 w-full object-cover rounded-lg">
+
+            <button onclick="play('Top Hits')" 
+              class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition hover:scale-110">
+              ▶
+            </button>
+          </div>
+
+          <p class="mt-3 font-semibold">Top Hits</p>
+          <p class="text-sm text-gray-400">As mais tocadas</p>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+
+          <div class="relative">
+            <img src="../assets/Podcast.png"
+              class="h-40 w-full object-cover rounded-lg">
+
+            <button onclick="play('Funk BR')" 
+              class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
+              ▶
+            </button>
+          </div>
+
+          <p class="mt-3 font-semibold">Podcasts</p>
+          <p class="text-sm text-gray-400">As melhores conversas</p>
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+
+          <div class="relative">
+            <img src="../assets/FeitoPVocê.png"
+              class="h-40 w-full object-cover rounded-lg">
+
+            <button onclick="play('Chill')" 
+              class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
+              ▶
+            </button>
+          </div>
+
+          <p class="mt-3 font-semibold">Feito para você</p>
+          <p class="text-sm text-gray-400">Sua seleção especial</p>
+
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+
+          <div class="relative">
+            <img src="../assets/Lançamento.png"
+              class="h-40 w-full object-cover rounded-lg">
+
+            <button onclick="play('Pop Mix')" 
+              class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
+              ▶
+            </button>
+          </div>
+
+          <p class="mt-3 font-semibold">Lançamentos</p>
+          <p class="text-sm text-gray-400">As últimas músicas adicionadas</p>
+
+        </div>
+
+      </div>
+    </section>
+    
+    <!-- PLAYLISTS Ouça novamente -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-6">Ouça novamente</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <!-- CARD -->
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+
+          <div class="relative">
+            <img src="../assets/FlowerBoy.jpg"
+              class="h-40 w-full object-cover rounded-lg">
+
+            <button onclick="play('Top Hits')" 
+              class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition hover:scale-110">
+              ▶
+            </button>
+          </div>
+
+          <p class="mt-3 font-semibold">Flower Boy</p>
+          <p class="text-sm text-gray-400">Tyler, The Creator</p>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+
+          <div class="relative">
+            <img src="../assets/Utopia.jpg"
+              class="h-40 w-full object-cover rounded-lg">
+
+            <button onclick="play('Funk BR')" 
+              class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
+              ▶
+            </button>
+          </div>
+
+          <p class="mt-3 font-semibold">Utopia</p>
+          <p class="text-sm text-gray-400">Travis Scott</p>
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+
+          <div class="relative">
+            <img src="../assets/AstroWorld.jpg"
+              class="h-40 w-full object-cover rounded-lg">
+
+            <button onclick="play('Chill')" 
+              class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
+              ▶
+            </button>
+          </div>
+
+          <p class="mt-3 font-semibold">AstroWorld</p>
+          <p class="text-sm text-gray-400">Travis Scott</p>
+
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+
+          <div class="relative">
+            <img src="../assets/Blonde.jpg"
+              class="h-40 w-full object-cover rounded-lg">
+
+            <button onclick="play('Pop Mix')" 
+              class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
+              ▶
+            </button>
+          </div>
+
+          <p class="mt-3 font-semibold">Blonde</p>
+          <p class="text-sm text-gray-400">Frank Ocean</p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- MÚSICAS -->
+    <section>
+      <h2 class="text-2xl font-bold mb-4">Tocando agora</h2>
+
+      <div class="bg-gray-900 p-4 rounded-xl">
+
+        <div class="flex justify-between py-3 border-b border-gray-800">
+          <span>Música 1</span>
+          <button onclick="play('Música 1')" class="text-pink-400">▶</button>
+        </div>
+
+        <div class="flex justify-between py-3 border-b border-gray-800">
+          <span>Música 2</span>
+          <button onclick="play('Música 2')" class="text-pink-400">▶</button>
+        </div>
+
+        <div class="flex justify-between py-3">
+          <span>Música 3</span>
+          <button onclick="play('Música 3')" class="text-pink-400">▶</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PLAYER FIXO -->
+  <div class="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-gray-800 p-4 flex justify-between items-center">
+
+    <span id="player" class="text-gray-300">Nenhuma música tocando</span>
+
+    <div class="space-x-4 text-xl">
+      <button>⏮</button>
+      <button>⏯</button>
+      <button>⏭</button>
+    </div>
+
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    function play(nome) {
+      document.getElementById("player").innerText = "🎧 Tocando: " + nome;
+    }
+
+    function logout() {
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
