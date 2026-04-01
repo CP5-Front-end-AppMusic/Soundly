@@ -275,7 +275,8 @@
        <button onclick="prevTrack()" class="text-gray-400 hover:text-white">⏮</button>
        <button onclick="togglePlayPause()" class="toggle-play text-gray-400 hover:text-white text-2xl">▶</button>
        <button onclick="nextTrack()" class="text-gray-400 hover:text-white">⏭</button>
-       <button onclick="toggleFavorite()" class="text-gray-400 hover:text-white text-xl ml-2">♥</button>
+       <button onclick="restartTrack()" class="text-gray-400 hover:text-white">↻</button>
+       <button onclick="toggleFavorite()" class="text-gray-400 hover:text-white text-xl">♥</button>
      </div>
 
    </div>
@@ -392,6 +393,17 @@
     function prevTrack() {
       currentIndex = (currentIndex - 1 + trackList.length) % trackList.length;
       play(trackList[currentIndex]);
+    }
+
+    function restartTrack() {
+      if (currentAudio) {
+        currentAudio.currentTime = 0;
+        if (!isPlaying) {
+          currentAudio.play();
+          isPlaying = true;
+          document.querySelector('.toggle-play').textContent = '⏸';
+        }
+      }
     }
 
     let isFavorite = false;
