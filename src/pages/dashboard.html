@@ -256,22 +256,29 @@
   </main>
 
   
-  <div class="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-gray-800 p-4 flex justify-between items-center">
+   <div class="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-gray-800 p-4">
+     
+     <div class="flex items-center gap-3 mb-3">
+       <span class="text-pink-500 text-2xl">♫</span>
+       <span id="player" class="text-gray-300">Nenhuma música tocando</span>
+     </div>
 
-    <div class="flex items-center gap-3">
-      <span class="text-pink-500 text-2xl">♫</span>
-      <span id="player" class="text-gray-300">Nenhuma música tocando</span>
-    </div>
+     <div class="flex items-center gap-3">
+       <span id="current-time" class="text-xs text-gray-400 w-10">0:00</span>
+       <div class="flex-1 h-1 bg-gray-700 rounded-full cursor-pointer" onclick="seekTrack(event)" id="progress-container">
+         <div id="progress-bar" class="h-full bg-pink-500 rounded-full transition-all duration-100" style="width: 0%"></div>
+       </div>
+       <span id="total-time" class="text-xs text-gray-400 w-10">0:00</span>
+     </div>
 
-    <div class="flex items-center gap-2">
-      <span id="current-track" class="text-sm text-gray-400 mr-4"></span>
-      <button onclick="prevTrack()" class="text-gray-400 hover:text-white">⏮</button>
-      <button onclick="togglePlayPause()" class="toggle-play text-gray-400 hover:text-white text-2xl">▶</button>
-      <button onclick="nextTrack()" class="text-gray-400 hover:text-white">⏭</button>
-      <button onclick="toggleFavorite()" class="text-gray-400 hover:text-white text-xl ml-2">♥</button>
-    </div>
+     <div class="flex justify-center items-center gap-4 mt-2">
+       <button onclick="prevTrack()" class="text-gray-400 hover:text-white">⏮</button>
+       <button onclick="togglePlayPause()" class="toggle-play text-gray-400 hover:text-white text-2xl">▶</button>
+       <button onclick="nextTrack()" class="text-gray-400 hover:text-white">⏭</button>
+       <button onclick="toggleFavorite()" class="text-gray-400 hover:text-white text-xl ml-2">♥</button>
+     </div>
 
-  </div>
+   </div>
 
   <script>
     let currentAudio = null;
@@ -314,18 +321,53 @@
       }
 
       currentAudio = new Audio(audioPath);
-      currentAudio.play();
-      isPlaying = true;
       
-      document.getElementById("player").innerText = "Tocando: " + nome;
-      document.querySelector('.toggle-play').textContent = '⏸';
-      document.getElementById("current-track").innerText = nome;
-      currentIndex = trackList.indexOf(nome);
+      currentAudio.addEventListener('canplay', () => {
+        document.getElementById('total-time').textContent = formatTime(currentAudio.duration);
+      });
+
+      currentAudio.addEventListener('timeupdate', () => {
+        if (currentAudio.duration && !isNaN(currentAudio.duration)) {
+          const progress = (currentAudio.currentTime / currentAudio.duration) * 100;
+          document.getElementById('progress-bar').style.width = progress + '%';
+          document.getElementById('current-time').textContent = formatTime(currentAudio.currentTime);
+          document.getElementById('total-time').textContent = formatTime(currentAudio.duration);
+        }
+      });
 
       currentAudio.addEventListener('ended', () => {
         isPlaying = false;
         document.querySelector('.toggle-play').textContent = '▶';
+        document.getElementById('progress-bar').style.width = '0%';
+        document.getElementById('current-time').textContent = '0:00';
       });
+
+      currentAudio.play().then(() => {
+        isPlaying = true;
+        document.querySelector('.toggle-play').textContent = '⏸';
+      }).catch(err => {
+        console.log('Erro ao tocar:', err);
+      });
+      
+      document.getElementById("player").innerText = "Tocando: " + nome;
+      document.getElementById("current-track").innerText = nome;
+      currentIndex = trackList.indexOf(nome);
+    }
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function seekTrack(e) {
+      if (currentAudio && currentAudio.duration) {
+        const container = document.getElementById('progress-container');
+        const rect = container.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const percentage = clickX / rect.width;
+        currentAudio.currentTime = percentage * currentAudio.duration;
+      }
     }
 
     function togglePlayPause() {
