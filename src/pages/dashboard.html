@@ -22,18 +22,18 @@
       <h1 class="text-2xl font-bold text-pink-500 mb-8">Melodia</h1>
 
       <nav class="space-y-4">
-        <a href="#" class="block hover:text-pink-400">🏠 Início</a>
-        <a href="#" class="block hover:text-pink-400">🔍 Buscar</a>
-        <a href="#" class="block hover:text-pink-400">🎵 Biblioteca</a>
+        <a href="#" class="block hover:text-pink-400">Início</a>
+        <a href="#" class="block hover:text-pink-400">Buscar</a>
+        <a href="#" class="block hover:text-pink-400">Biblioteca</a>
       </nav>
 
       <div class="mt-10">
         <p class="text-gray-400 text-sm mb-2">Playlists</p>
         <ul class="space-y-2 text-sm">
-          <li>🔥 Top Hits</li>
-          <li> Rock</li>
-          <li> Chill</li>
-          <li> Pop</li>
+          <li>Top Hits</li>
+          <li>Rock</li>
+          <li>Chill</li>
+          <li>Pop</li>
         </ul>
       </div>
     </div>
@@ -54,9 +54,9 @@
         class="bg-gray-800 p-3 rounded-lg w-1/2 focus:outline-none focus:ring-2 focus:ring-pink-500"
       >
 
-      <div class="flex items-center gap-3">
-        <span class="text-gray-300">👤 usuário</span>
-      </div>
+      <a href="user.html" class="flex items-center gap-3 hover:text-pink-400 transition">
+        <span class="text-gray-300">usuário</span>
+      </a>
 
     </div>
 
@@ -65,14 +65,13 @@
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 
-        <!-- CARD -->
-        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+        <div onclick="play('Top Hits')" class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
             <img src="../assets/MaisTocada.png"
               class="h-40 w-full object-cover rounded-lg">
 
-            <button onclick="play('Top Hits')" 
+            <button onclick="event.stopPropagation(); play('Top Hits')" 
               class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition hover:scale-110">
               ▶
             </button>
@@ -83,13 +82,13 @@
 
         </div>
 
-        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+        <div onclick="play('Funk BR')" class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
             <img src="../assets/Podcast.png"
               class="h-40 w-full object-cover rounded-lg">
 
-            <button onclick="play('Funk BR')" 
+            <button onclick="event.stopPropagation(); play('Funk BR')" 
               class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
               ▶
             </button>
@@ -100,13 +99,13 @@
 
         </div>
 
-        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+        <div onclick="play('Chill')" class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
             <img src="../assets/FeitoPVocê.png"
               class="h-40 w-full object-cover rounded-lg">
 
-            <button onclick="play('Chill')" 
+            <button onclick="event.stopPropagation(); play('Chill')" 
               class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
               ▶
             </button>
@@ -117,13 +116,13 @@
 
         </div>
 
-        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+        <div onclick="play('Pop Mix')" class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
             <img src="../assets/Lançamento.png"
               class="h-40 w-full object-cover rounded-lg">
 
-            <button onclick="play('Pop Mix')" 
+            <button onclick="event.stopPropagation(); play('Pop Mix')" 
               class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
               ▶
             </button>
@@ -143,72 +142,72 @@
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 
-        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+        <div onclick="play('Forewolrd')" class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
             <img src="../assets/FlowerBoy.jpg"
               class="h-40 w-full object-cover rounded-lg">
 
-            <button onclick="play('Top Hits')" 
+            <button onclick="event.stopPropagation(); play('Forewolrd')" 
               class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition hover:scale-110">
               ▶
             </button>
           </div>
 
-          <p class="mt-3 font-semibold">Flower Boy</p>
+          <p class="mt-3 font-semibold">Forewolrd</p>
           <p class="text-sm text-gray-400">Tyler, The Creator</p>
 
         </div>
 
     
-        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+        <div onclick="play('HYAENA')" class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
             <img src="../assets/Utopia.jpg"
               class="h-40 w-full object-cover rounded-lg">
 
-            <button onclick="play('Funk BR')" 
+            <button onclick="event.stopPropagation(); play('HYAENA')" 
               class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
               ▶
             </button>
           </div>
 
-          <p class="mt-3 font-semibold">Utopia</p>
+          <p class="mt-3 font-semibold">HYAENA</p>
           <p class="text-sm text-gray-400">Travis Scott</p>
 
         </div>
 
-        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+        <div onclick="play('STARGAZING')" class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
             <img src="../assets/AstroWorld.jpg"
               class="h-40 w-full object-cover rounded-lg">
 
-            <button onclick="play('Chill')" 
+            <button onclick="event.stopPropagation(); play('STARGAZING')" 
               class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
               ▶
             </button>
           </div>
 
-          <p class="mt-3 font-semibold">AstroWorld</p>
+          <p class="mt-3 font-semibold">STARGAZING</p>
           <p class="text-sm text-gray-400">Travis Scott</p>
 
         </div>
 
       
-        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+        <div onclick="play('Nikes')" class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
 
           <div class="relative">
             <img src="../assets/Blonde.jpg"
               class="h-40 w-full object-cover rounded-lg">
 
-            <button onclick="play('Pop Mix')" 
+            <button onclick="event.stopPropagation(); play('Nikes')" 
               class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
               ▶
             </button>
           </div>
 
-          <p class="mt-3 font-semibold">Blonde</p>
+          <p class="mt-3 font-semibold">Nikes</p>
           <p class="text-sm text-gray-400">Frank Ocean</p>
 
         </div>
@@ -222,19 +221,19 @@
 
       <div class="bg-gray-900 p-4 rounded-xl">
 
-        <div class="flex justify-between py-3 border-b border-gray-800">
-          <span>Música 1</span>
-          <button onclick="play('Música 1')" class="text-pink-400">▶</button>
+        <div onclick="play('STARGAZING')" class="flex justify-between py-3 border-b border-gray-800 cursor-pointer hover:text-pink-400 transition">
+          <span>STARGAZING - Travis Scott</span>
+          <button onclick="event.stopPropagation(); play('STARGAZING')" class="text-pink-400">▶</button>
         </div>
 
-        <div class="flex justify-between py-3 border-b border-gray-800">
-          <span>Música 2</span>
-          <button onclick="play('Música 2')" class="text-pink-400">▶</button>
+        <div onclick="play('Nikes')" class="flex justify-between py-3 border-b border-gray-800 cursor-pointer hover:text-pink-400 transition">
+          <span>Nikes - Frank Ocean</span>
+          <button onclick="event.stopPropagation(); play('Nikes')" class="text-pink-400">▶</button>
         </div>
 
-        <div class="flex justify-between py-3">
-          <span>Música 3</span>
-          <button onclick="play('Música 3')" class="text-pink-400">▶</button>
+        <div onclick="play('HYAENA')" class="flex justify-between py-3 cursor-pointer hover:text-pink-400 transition">
+          <span>HYAENA - Travis Scott</span>
+          <button onclick="event.stopPropagation(); play('HYAENA')" class="text-pink-400">▶</button>
         </div>
 
       </div>
@@ -245,19 +244,83 @@
   
   <div class="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-gray-800 p-4 flex justify-between items-center">
 
-    <span id="player" class="text-gray-300">Nenhuma música tocando</span>
+    <div class="flex items-center gap-3">
+      <span class="text-pink-500 text-2xl">♫</span>
+      <span id="player" class="text-gray-300">Nenhuma música tocando</span>
+    </div>
 
-    <div class="space-x-4 text-xl">
-      <button>⏮</button>
-      <button>⏯</button>
-      <button>⏭</button>
+    <div class="flex items-center gap-2">
+      <span id="current-track" class="text-sm text-gray-400 mr-4"></span>
+      <button class="text-gray-400 hover:text-white">⏮</button>
+      <button onclick="togglePlayPause()" class="toggle-play text-gray-400 hover:text-white text-2xl">▶</button>
+      <button class="text-gray-400 hover:text-white">⏭</button>
     </div>
 
   </div>
 
   <script>
+    let currentAudio = null;
+    let isPlaying = false;
+
+    const audioFiles = {
+      'Forewolrd': '../assets/audios/Foreworld.mp3',
+      'HYAENA': '../assets/audios/HYAENA.mp3',
+      'STARGAZING': '../assets/audios/STARGAZING.mp3',
+      'Nikes': '../assets/audios/Nikes.mp3'
+    };
+
     function play(nome) {
-      document.getElementById("player").innerText = "🎧 Tocando: " + nome;
+      const audioPath = audioFiles[nome];
+      
+      if (!audioPath) {
+        document.getElementById("player").innerText = "Tocando: " + nome;
+        return;
+      }
+
+      if (currentAudio && currentAudio.src.includes(audioPath)) {
+        if (isPlaying) {
+          currentAudio.pause();
+          isPlaying = false;
+          document.querySelector('.toggle-play').textContent = '▶';
+        } else {
+          currentAudio.play();
+          isPlaying = true;
+          document.querySelector('.toggle-play').textContent = '⏸';
+        }
+        return;
+      }
+
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
+      }
+
+      currentAudio = new Audio(audioPath);
+      currentAudio.play();
+      isPlaying = true;
+      
+      document.getElementById("player").innerText = "Tocando: " + nome;
+      document.querySelector('.toggle-play').textContent = '⏸';
+      document.getElementById("current-track").innerText = nome;
+
+      currentAudio.addEventListener('ended', () => {
+        isPlaying = false;
+        document.querySelector('.toggle-play').textContent = '▶';
+      });
+    }
+
+    function togglePlayPause() {
+      if (currentAudio) {
+        if (isPlaying) {
+          currentAudio.pause();
+          isPlaying = false;
+          document.querySelector('.toggle-play').textContent = '▶';
+        } else {
+          currentAudio.play();
+          isPlaying = true;
+          document.querySelector('.toggle-play').textContent = '⏸';
+        }
+      }
     }
 
     function logout() {

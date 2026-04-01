@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melodia - Perfil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white flex">
+
+  <aside class="w-64 bg-black p-6 hidden md:flex flex-col justify-between border-r border-gray-800">
+
+    <div>
+      <h1 class="text-2xl font-bold text-pink-500 mb-8">Melodia</h1>
+
+      <nav class="space-y-4">
+        <a href="dashboard.html" class="block hover:text-pink-400">Início</a>
+        <a href="#" class="block hover:text-pink-400">Buscar</a>
+        <a href="#" class="block hover:text-pink-400">Biblioteca</a>
+      </nav>
+
+      <div class="mt-10">
+        <p class="text-gray-400 text-sm mb-2">Playlists</p>
+        <ul class="space-y-2 text-sm">
+          <li>Top Hits</li>
+          <li>Rock</li>
+          <li>Chill</li>
+          <li>Pop</li>
+        </ul>
+      </div>
+    </div>
+
+    <button onclick="logout()" class="text-red-400 text-sm hover:text-red-600">
+      Sair
+    </button>
+
+  </aside>
+
+  <main class="flex-1 p-6 pb-24">
+
+    <div class="flex justify-between items-center mb-8">
+
+      <h1 class="text-2xl font-bold">Seu Perfil</h1>
+
+      <a href="user.html" class="flex items-center gap-3">
+        <span class="text-gray-300">usuário</span>
+      </a>
+
+    </div>
+
+    <section class="mb-10">
+      <div class="flex flex-col md:flex-row items-center gap-8 bg-gray-900 p-8 rounded-2xl">
+        
+        <div class="relative">
+          <img src="../assets/FlowerBoy.jpg" 
+            class="w-40 h-40 rounded-full object-cover border-4 border-pink-500">
+          <button class="absolute bottom-2 right-2 bg-pink-500 p-2 rounded-full text-sm hover:bg-pink-600 transition">
+            Editar
+          </button>
+        </div>
+
+        <div class="text-center md:text-left">
+          <h2 class="text-3xl font-bold mb-1">João Silva</h2>
+          <p class="text-gray-400 mb-4">joao@email.com</p>
+          <p class="text-sm text-gray-500">Membro desde Janeiro de 2024</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-bold mb-6">Estatísticas</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="bg-gray-900 p-6 rounded-xl text-center">
+          <p class="text-4xl font-bold text-pink-500 mb-2">156</p>
+          <p class="text-gray-400">Músicas ouvidas</p>
+        </div>
+
+        <div class="bg-gray-900 p-6 rounded-xl text-center">
+          <p class="text-4xl font-bold text-pink-500 mb-2">12</p>
+          <p class="text-gray-400">Playlists criadas</p>
+        </div>
+
+        <div class="bg-gray-900 p-6 rounded-xl text-center">
+          <p class="text-4xl font-bold text-pink-500 mb-2">89</p>
+          <p class="text-gray-400">Favoritos</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-bold mb-6">Suas Playlists</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+          <div class="relative">
+            <img src="../assets/MaisTocada.png" class="h-40 w-full object-cover rounded-lg">
+            <button class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition hover:scale-110">
+              ▶
+            </button>
+          </div>
+          <p class="mt-3 font-semibold">Top Hits</p>
+          <p class="text-sm text-gray-400">12 músicas</p>
+        </div>
+
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+          <div class="relative">
+            <img src="../assets/FeitoPVocê.png" class="h-40 w-full object-cover rounded-lg">
+            <button class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
+              ▶
+            </button>
+          </div>
+          <p class="mt-3 font-semibold">Feito para você</p>
+          <p class="text-sm text-gray-400">25 músicas</p>
+        </div>
+
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+          <div class="relative">
+            <img src="../assets/Podcast.png" class="h-40 w-full object-cover rounded-lg">
+            <button class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
+              ▶
+            </button>
+          </div>
+          <p class="mt-3 font-semibold">Podcasts</p>
+          <p class="text-sm text-gray-400">8 episódios</p>
+        </div>
+
+        <div class="bg-gray-900 p-4 rounded-xl hover:bg-gray-800 transition group cursor-pointer">
+          <div class="relative">
+            <img src="../assets/Lançamento.png" class="h-40 w-full object-cover rounded-lg">
+            <button class="absolute bottom-3 right-3 bg-pink-500 p-3 rounded-full opacity-0 group-hover:opacity-100 transition">
+              ▶
+            </button>
+          </div>
+          <p class="mt-3 font-semibold">Lançamentos</p>
+          <p class="text-sm text-gray-400">15 músicas</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold mb-4">Histórico Recente</h2>
+
+      <div class="bg-gray-900 p-4 rounded-xl">
+
+        <div class="flex justify-between py-3 border-b border-gray-800">
+          <div class="flex items-center gap-4">
+            <span class="text-gray-400">1</span>
+            <img src="../assets/AstroWorld.jpg" class="w-10 h-10 rounded object-cover">
+            <div>
+              <p class="font-medium">STARGAZING</p>
+              <p class="text-sm text-gray-400">Travis Scott</p>
+            </div>
+          </div>
+          <span class="text-gray-400 text-sm">há 2 horas</span>
+        </div>
+
+        <div class="flex justify-between py-3 border-b border-gray-800">
+          <div class="flex items-center gap-4">
+            <span class="text-gray-400">2</span>
+            <img src="../assets/Blonde.jpg" class="w-10 h-10 rounded object-cover">
+            <div>
+              <p class="font-medium">Nikes</p>
+              <p class="text-sm text-gray-400">Frank Ocean</p>
+            </div>
+          </div>
+          <span class="text-gray-400 text-sm">há 5 horas</span>
+        </div>
+
+        <div class="flex justify-between py-3">
+          <div class="flex items-center gap-4">
+            <span class="text-gray-400">3</span>
+            <img src="../assets/Utopia.jpg" class="w-10 h-10 rounded object-cover">
+            <div>
+              <p class="font-medium">HYAENA</p>
+              <p class="text-sm text-gray-400">Travis Scott</p>
+            </div>
+          </div>
+          <span class="text-gray-400 text-sm">há 1 dia</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div class="fixed bottom-0 left-0 w-full bg-gray-900 border-t border-gray-800 p-4 flex justify-between items-center">
+
+    <div class="flex items-center gap-3">
+      <span class="text-pink-500 text-2xl">♫</span>
+      <span id="player" class="text-gray-300">Nenhuma música tocando</span>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <span id="current-track" class="text-sm text-gray-400 mr-4"></span>
+      <button class="text-gray-400 hover:text-white">⏮</button>
+      <button onclick="togglePlayPause()" class="toggle-play text-gray-400 hover:text-white text-2xl">▶</button>
+      <button class="text-gray-400 hover:text-white">⏭</button>
+    </div>
+
+  </div>
+
+  <script>
+    let currentAudio = null;
+    let isPlaying = false;
+
+    const audioFiles = {
+      'Forewolrd': '../assets/audios/Foreworld.mp3',
+      'HYAENA': '../assets/audios/HYAENA.mp3',
+      'STARGAZING': '../assets/audios/STARGAZING.mp3',
+      'Nikes': '../assets/audios/Nikes.mp3'
+    };
+
+    function play(nome) {
+      const audioPath = audioFiles[nome];
+      
+      if (!audioPath) {
+        document.getElementById("player").innerText = "Tocando: " + nome;
+        return;
+      }
+
+      if (currentAudio && currentAudio.src.includes(audioPath)) {
+        if (isPlaying) {
+          currentAudio.pause();
+          isPlaying = false;
+          document.querySelector('.toggle-play').textContent = '▶';
+        } else {
+          currentAudio.play();
+          isPlaying = true;
+          document.querySelector('.toggle-play').textContent = '⏸';
+        }
+        return;
+      }
+
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
+      }
+
+      currentAudio = new Audio(audioPath);
+      currentAudio.play();
+      isPlaying = true;
+      
+      document.getElementById("player").innerText = "Tocando: " + nome;
+      document.querySelector('.toggle-play').textContent = '⏸';
+      document.getElementById("current-track").innerText = nome;
+
+      currentAudio.addEventListener('ended', () => {
+        isPlaying = false;
+        document.querySelector('.toggle-play').textContent = '▶';
+      });
+    }
+
+    function togglePlayPause() {
+      if (currentAudio) {
+        if (isPlaying) {
+          currentAudio.pause();
+          isPlaying = false;
+          document.querySelector('.toggle-play').textContent = '▶';
+        } else {
+          currentAudio.play();
+          isPlaying = true;
+          document.querySelector('.toggle-play').textContent = '⏸';
+        }
+      }
+    }
+
+    function logout() {
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
