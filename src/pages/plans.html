@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melodia Planos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .plan-card:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+
+  <nav class="fixed w-full flex justify-between items-center p-6 bg-black/30 backdrop-blur-md z-50">
+    <h1 class="text-xl font-bold text-pink-500">Melodia</h1>
+    <a href="dashboard.html" class="text-gray-300 hover:text-white">← Voltar</a>
+  </nav>
+
+  <section class="min-h-screen flex flex-col justify-center items-center pt-20 px-6 bg-gradient-to-br from-purple-900 via-black to-pink-900">
+    
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">
+      Escolha seu <span class="text-pink-500">Plano</span>
+    </h1>
+
+    <p class="text-gray-400 mb-12 text-center max-w-lg">
+      Desbloqueie todas as funcionalidades e aproveite a melhor experiência musical.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl w-full">
+
+      <div class="plan-card bg-white/10 p-8 rounded-2xl backdrop-blur-lg transition duration-300 border border-gray-700 hover:border-pink-500 cursor-pointer">
+        <h3 class="text-xl font-bold mb-2">Mensal</h3>
+        <p class="text-gray-400 text-sm mb-6">Por mês</p>
+        <div class="text-4xl font-bold mb-6">
+          R$ 10,00
+        </div>
+        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+          <li>✓ Músicas sem propaganda</li>
+          <li>✓ Alta qualidade de áudio</li>
+          <li>✓ Acesso offline</li>
+        </ul>
+        <button class="w-full py-3 rounded-full border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-black transition">
+          Assinar
+        </button>
+      </div>
+
+      <div class="plan-card bg-gradient-to-b from-pink-600/30 to-purple-900/30 p-8 rounded-2xl backdrop-blur-lg transition duration-300 border-2 border-pink-500 cursor-pointer relative">
+        <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pink-500 text-xs px-3 py-1 rounded-full font-bold">
+          Popular
+        </span>
+        <h3 class="text-xl font-bold mb-2">Trimestral</h3>
+        <p class="text-gray-400 text-sm mb-6">Por 3 meses</p>
+        <div class="text-4xl font-bold mb-6">
+          R$ 25,90
+        </div>
+        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+          <li>✓ Músicas sem propaganda</li>
+          <li>✓ Alta qualidade de áudio</li>
+          <li>✓ Acesso offline</li>
+          <li>✓ Desconto de 14%</li>
+        </ul>
+        <button class="w-full py-3 rounded-full bg-pink-500 text-black hover:bg-pink-600 transition font-bold">
+          Assinar
+        </button>
+      </div>
+
+      <div class="plan-card bg-white/10 p-8 rounded-2xl backdrop-blur-lg transition duration-300 border border-gray-700 hover:border-pink-500 cursor-pointer">
+        <h3 class="text-xl font-bold mb-2">Anual</h3>
+        <p class="text-gray-400 text-sm mb-6">Por ano</p>
+        <div class="text-4xl font-bold mb-6">
+          R$ 85,90
+        </div>
+        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+          <li>✓ Músicas sem propaganda</li>
+          <li>✓ Alta qualidade de áudio</li>
+          <li>✓ Acesso offline</li>
+          <li>✓ Desconto de 28%</li>
+        </ul>
+        <button class="w-full py-3 rounded-full border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-black transition">
+          Assinar
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
